@@ -1,0 +1,8 @@
+{
+  "$comment": "Review ledger (ds-workflow, playbooks/ds-review-loop). The Figma API cannot read the Ready-for-dev mark, so the designer puts the review.readyMarker before a section's name and the state is recorded here, in the repo, where every agent and person sees it. ready / unconfirmed nodes are never changed in place: changes go in a v2 beside them and into pending. `npx ds-workflow check` validates this file; `npx ds-workflow review` prints it.",
+  "file": "",
+  "ready": [],
+  "unconfirmed": [],
+  "pending": [],
+  "reviewQueue": null
+}

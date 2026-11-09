@@ -1,0 +1,56 @@
+{
+  "name": "agent-figma-design-system",
+  "version": "0.2.0",
+  "description": "Keep your Figma design system and your code in sync with any coding agent (Codex, Cursor, Claude Code, Copilot, Gemini CLI, Cline…): pinned tokens, a component registry, a CI gate, a designer review loop, and playbooks that teach agents to reuse, propose and write back components.",
+  "keywords": [
+    "figma",
+    "design-system",
+    "design-tokens",
+    "figma-variables",
+    "figma-mcp",
+    "mcp",
+    "ai-agent",
+    "coding-agent",
+    "agents-md",
+    "codex",
+    "cursor",
+    "claude-code",
+    "dtcg",
+    "css-variables",
+    "design-to-code",
+    "component-library",
+    "lint",
+    "github-copilot",
+    "gemini-cli",
+    "cline",
+    "design-review"
+  ],
+  "homepage": "https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System/issues"
+  },
+  "type": "module",
+  "bin": {
+    "ds-workflow": "bin/ds-workflow.mjs"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "figma",
+    "playbooks",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "MIT"
+}

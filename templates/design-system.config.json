@@ -1,0 +1,44 @@
+{
+  "designSystem": {
+    "name": "My Design System",
+    "source": null,
+    "proposalPage": "Proposed",
+    "screensPage": "Screens · {label}"
+  },
+  "proposal": {
+    "prefix": "Proposed"
+  },
+  "tokens": {
+    "prefix": "ds",
+    "css": "src/styles/ds-tokens.css",
+    "proposed": "design-system/tokens/proposed.tokens.json"
+  },
+  "check": {
+    "scan": [
+      "src"
+    ],
+    "componentDirs": [
+      "src/ui"
+    ],
+    "legacy": []
+  },
+  "registry": {
+    "markdown": "docs/design/component-registry.md"
+  },
+  "playbooks": {
+    "dir": "docs/ds-workflow"
+  },
+  "agents": {
+    "targets": "auto",
+    "skillsDirs": [],
+    "extraFiles": []
+  },
+  "review": {
+    "channel": "figma",
+    "ledger": "design-system/figma-review.json",
+    "readyMarker": "✅ Ready",
+    "pendingMarker": "· 🟡 In review",
+    "annotationCategory": "Design review",
+    "queueName": "Review queue"
+  }
+}

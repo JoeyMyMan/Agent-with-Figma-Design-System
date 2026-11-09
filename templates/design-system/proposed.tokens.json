@@ -1,0 +1,5 @@
+{
+  "$description": "Tokens this project proposes, pending the designer's approval (ds-workflow, playbooks/ds-propose). Each token: $type, $value, $extensions.proposal { status: proposed | needs-designer, use, alias?, review? }. An alias points at a pinned token path (e.g. paint/Gray/900) and wins over $value.",
+  "variables": {},
+  "effect": {}
+}
