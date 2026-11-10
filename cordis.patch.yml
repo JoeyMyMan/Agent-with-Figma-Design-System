@@ -1,0 +1,4 @@
+- insert:
+    - id: figma-design-system
+      name: dsh-figma-design-system
+      config: {}

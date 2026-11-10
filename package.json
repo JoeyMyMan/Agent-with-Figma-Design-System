@@ -1,39 +1,23 @@
 {
-  "name": "agent-figma-design-system",
-  "version": "0.2.0",
-  "description": "Keep your Figma design system and your code in sync with any coding agent (Codex, Cursor, Claude Code, Copilot, Gemini CLI, Cline…): pinned tokens, a component registry, a CI gate, a designer review loop, and playbooks that teach agents to reuse, propose and write back components.",
-  "keywords": [
-    "figma",
-    "design-system",
-    "design-tokens",
-    "figma-variables",
-    "figma-mcp",
-    "mcp",
-    "ai-agent",
-    "coding-agent",
-    "agents-md",
-    "codex",
-    "cursor",
-    "claude-code",
-    "dtcg",
-    "css-variables",
-    "design-to-code",
-    "component-library",
-    "lint",
-    "github-copilot",
-    "gemini-cli",
-    "cline",
-    "design-review"
-  ],
-  "homepage": "https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System#readme",
+  "name": "dsh-figma-design-system",
+  "version": "0.2.1",
+  "description": "DeepSeek Harness workflow for pinned Figma design tokens, component reuse, CI validation and design review.",
+  "keywords": ["dsh", "dsh-plugin", "figma", "figma-mcp", "design-system", "design-tokens", "design-review"],
+  "homepage": "https://github.com/JoeyMyMan/Agent-with-Figma-Design-System#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System.git"
+    "url": "git+https://github.com/JoeyMyMan/Agent-with-Figma-Design-System.git"
   },
   "bugs": {
-    "url": "https://github.com/Tuzibaobaobai/Agent-with-Figma-Design-System/issues"
+    "url": "https://github.com/JoeyMyMan/Agent-with-Figma-Design-System/issues"
   },
   "type": "module",
+  "main": "./dsh.mjs",
+  "exports": {
+    ".": "./dsh.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "ds-workflow": "bin/ds-workflow.mjs"
   },
@@ -43,7 +27,11 @@
     "figma",
     "playbooks",
     "templates",
+    "dsh.mjs",
+    "cordis.patch.yml",
+    "DSH.md",
     "README.md",
+    "README.zh-CN.md",
     "LICENSE"
   ],
   "engines": {
@@ -52,5 +40,11 @@
   "scripts": {
     "test": "node --test test/*.test.mjs"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
 }
