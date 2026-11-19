@@ -1,0 +1,21 @@
+# ds-workflow gate: code may use only tokens of the pinned design-system version (docs/ds-workflow/).
+name: design-system check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  ds-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npx ds-workflow check
+      # the generated files must match their sources
+      - run: npx ds-workflow build && npx ds-workflow registry && git diff --exit-code -- design-system docs/design
+      # the production branch only (adjust if yours is not main): nothing may still be waiting for the designer's review (ds-review-loop)
+      - if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+        run: npx ds-workflow review --strict

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Figma 设计系统 (dsh-figma-ds)",
+    "description": "让 Figma 设计系统与代码保持同步：锁定 token、组件登记表、check 门禁、设计师评审台账与 agent 手册，都在一个页面里查看和运行。"
+  }
+}

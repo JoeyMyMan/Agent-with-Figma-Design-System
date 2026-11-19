@@ -1,0 +1,26 @@
+{
+  "designSystem": "小浣熊教育版设计系统",
+  "figmaFileKey": "lmbRXNuIp0ZsJ4LI32T2ZK",
+  "label": "DS-2026-11-15",
+  "source": "plugin-export (5 files)",
+  "origin": {
+    "kind": "figma-file",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK/%E5%B0%8F%E6%B5%A3%E7%86%8A%E6%95%99%E8%82%B2%E7%89%88?node-id=290-16856",
+    "fileKey": "lmbRXNuIp0ZsJ4LI32T2ZK",
+    "nodeId": "290:16856"
+  },
+  "date": "2026-11-15",
+  "syncedAt": "2026-11-15",
+  "counts": {
+    "variables": 268,
+    "paintStyles": 10,
+    "textStyles": 29,
+    "effectStyles": 17,
+    "components": 265
+  },
+  "outputs": {
+    "design-system/tokens/design-system.tokens.json": "0bd09b1f17d43391dc721af894a56c889708d1a01f38f5e42db49932d28a0158",
+    "design-system/components.inventory.json": "b027e1b22d41843293d9c3dd448438b923e0ab2687f34c65871d066fc39eaa2a"
+  },
+  "previous": null
+}

@@ -1,0 +1,44 @@
+{
+ "$comment": "Review ledger (ds-workflow, playbooks/ds-review-loop). The Figma API cannot read the Ready-for-dev mark, so the designer puts the review.readyMarker before a section's name and the state is recorded here, in the repo, where every agent and person sees it. ready / unconfirmed nodes are never changed in place: changes go in a v2 beside them and into pending. `npx ds-workflow check` validates this file; `npx ds-workflow review` prints it.",
+ "file": "lmbRXNuIp0ZsJ4LI32T2ZK",
+ "ready": [
+  {
+   "section": "✅ Ready · 首页",
+   "nodeId": "1761:6761",
+   "frames": [
+    {
+     "name": "教育应用 / 已登录",
+     "nodeId": "2821:24306"
+    }
+   ],
+   "since": "2026-11-08",
+   "codeAligned": true
+  }
+ ],
+ "unconfirmed": [
+  {
+   "section": "教育应用 · 分享弹窗",
+   "nodeId": "2821:24352",
+   "note": "设计师改过，但没标 Ready for dev"
+  }
+ ],
+ "pending": [
+  {
+   "added": "2026-11-14",
+   "what": "顶栏新增「任务」tab",
+   "code": [
+    "src/ui/TopBar.tsx"
+   ],
+   "nodes": {
+    "screens": [
+     "2821:24162"
+    ]
+   }
+  }
+ ],
+ "reviewQueue": {
+  "page": "Screens · DS-2026-11-15",
+  "nodeId": "290:16856",
+  "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=290-16856"
+ }
+}

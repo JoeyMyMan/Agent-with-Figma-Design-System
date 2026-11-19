@@ -139,6 +139,23 @@ Step-by-step procedures for agents, written in `SKILL.md` format:
 | `ds-upgrade` | The library has a new version: sync, diff, migrate, verify |
 | `reference/figma-gotchas` | Plugin-API pitfalls collected from real use |
 
+## DeepSeek Harness plugin
+
+`integrations/dsh-figma-ds/` turns the workflow into a page in the [DeepSeek Harness](https://github.com/deepseek-ai) Web UI — sidebar entry 「设计系统」 with 概览 / 门禁 / Token / 组件 / 评审 / 手册 / 命令 tabs. The Host half imports this repository's `lib/*.mjs` directly (no vendored copy), so the page always runs the same code as `npx ds-workflow`; the client half is plain JavaScript with no build step.
+
+```sh
+# from a checkout of this repository (a linked local bundle, not an npm package)
+dsh plugin --profile <profile> add "$(pwd)/integrations/dsh-figma-ds"
+# restart Harness once so the Host half loads, then open 「设计系统」
+```
+
+![plugin page](integrations/dsh-figma-ds/docs/images/01-overview.png)
+
+- The page may only open directories inside an allowlist (registered Harness workspaces plus `DSW_PROJECT_DIR` / `DSW_PROJECT_DIRS`), and runs one command per directory because the toolkit writes without a lock.
+- Figma work (export, proposals, write-back, review reminders) stays an MCP operation; the 手册 tab opens the playbook for each step.
+- `examples/xiaohuanxiong-ds/` is a worked example pinned to a real library (268 variables, 265 components, 410 tokens, a five-entry registry, one review waiting). The step-by-step walkthrough is [integrations/dsh-figma-ds/docs/tutorial-xiaohuanxiong.md](integrations/dsh-figma-ds/docs/tutorial-xiaohuanxiong.md).
+- `node integrations/dsh-figma-ds/tests/smoke.mjs` exercises the page's Host functions without Harness; CI runs it on Node 20 and 22.
+
 ## Commands
 
 | Command | What it does |

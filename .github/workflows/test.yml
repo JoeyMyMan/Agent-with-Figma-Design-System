@@ -15,3 +15,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm test
+      - name: DeepSeek Harness plugin smoke test
+        run: node integrations/dsh-figma-ds/tests/smoke.mjs

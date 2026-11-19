@@ -1,0 +1,80 @@
+{
+ "note": "Code component ↔ design-system component (ds-workflow, playbooks/ds-map). status: reuse | extend | proposed | approved | deprecated.",
+ "designSystem": "DS-2026-11-15",
+ "components": [
+  {
+   "code": "src/ui/TopBar.tsx",
+   "status": "reuse",
+   "description": "顶栏：Logo、Tab、登录入口",
+   "screens": [
+    "首页",
+    "应用",
+    "任务"
+   ],
+   "figma": {
+    "nodeId": "2256:37070",
+    "name": "TopBar",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=2256-37070"
+   },
+   "note": "登录/功能上线两个 variant 由库里切换"
+  },
+  {
+   "code": "src/ui/Sidebar.tsx",
+   "status": "approved",
+   "description": "Web 个人版侧边栏（展开/收起）",
+   "screens": [
+    "首页"
+   ],
+   "figma": {
+    "nodeId": "2367:5427",
+    "name": "web个人版sidebar-登录后",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=2367-5427"
+   },
+   "variants": {
+    "Open": "yes / no"
+   }
+  },
+  {
+   "code": "src/ui/LoginButton.tsx",
+   "status": "extend",
+   "description": "登录按钮：需要 loading 态，库里没有",
+   "screens": [
+    "首页"
+   ],
+   "figma": {
+    "nodeId": "2541:7889",
+    "name": "Button",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=2541-7889"
+   },
+   "variants": {
+    "state": "Default / Hover / Loading"
+   },
+   "note": "已提案加 Loading variant，等设计确认"
+  },
+  {
+   "code": "proposed/ai-courseware-card",
+   "status": "proposed",
+   "description": "AI 课件卡片：标题 + 一句话描述 + 封面 + 入口",
+   "screens": [
+    "技能中心"
+   ],
+   "figmaProposal": {
+    "nodeId": "412:88",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=412-88"
+   },
+   "note": "库里只有通用卡片，没有课件场景的"
+  },
+  {
+   "code": "src/ui/DialogShare.tsx",
+   "status": "deprecated",
+   "description": "旧分享弹窗，已被分享面板取代",
+   "screens": [],
+   "figma": {
+    "nodeId": "2821:31581",
+    "name": "Dialog-分享",
+    "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK?node-id=2821-31581"
+   },
+   "note": "2026-Q1 移除"
+  }
+ ]
+}

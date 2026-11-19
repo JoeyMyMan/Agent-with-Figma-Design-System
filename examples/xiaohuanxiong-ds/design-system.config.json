@@ -1,0 +1,52 @@
+{
+  "designSystem": {
+    "name": "小浣熊教育版设计系统",
+    "source": {
+      "kind": "figma-file",
+      "fileKey": "lmbRXNuIp0ZsJ4LI32T2ZK",
+      "fileName": "小浣熊教育版",
+      "nodeId": "290:16856",
+      "url": "https://www.figma.com/design/lmbRXNuIp0ZsJ4LI32T2ZK/%E5%B0%8F%E6%B5%A3%E7%86%8A%E6%95%99%E8%82%B2%E7%89%88?node-id=290-16856"
+    },
+    "proposalPage": "Proposed",
+    "screensPage": "Screens · {label}"
+  },
+  "proposal": {
+    "prefix": "Proposed"
+  },
+  "tokens": {
+    "prefix": "xhx",
+    "css": "src/styles/xhx-tokens.css",
+    "proposed": "design-system/tokens/proposed.tokens.json"
+  },
+  "check": {
+    "scan": [
+      "src"
+    ],
+    "componentDirs": [
+      "src/ui"
+    ],
+    "legacy": []
+  },
+  "registry": {
+    "markdown": "docs/design/component-registry.md"
+  },
+  "playbooks": {
+    "dir": "docs/ds-workflow"
+  },
+  "agents": {
+    "targets": [
+      "agents-md"
+    ],
+    "skillsDirs": [],
+    "extraFiles": []
+  },
+  "review": {
+    "channel": "figma",
+    "ledger": "design-system/figma-review.json",
+    "readyMarker": "✅ Ready",
+    "pendingMarker": "· 🟡 In review",
+    "annotationCategory": "Design review",
+    "queueName": "Review queue"
+  }
+}

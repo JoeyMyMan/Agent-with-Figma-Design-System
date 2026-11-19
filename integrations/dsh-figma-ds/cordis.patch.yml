@@ -1,0 +1,9 @@
+# Adds one row: the plugin's Host half. The `dsh.client` declaration in
+# package.json loads ./client.js as the browser half, which registers the
+# 「设计系统」 panel in the sidebar and its page in the main column.
+#
+# The Loader entry name must stay identical to the package name: the Web client
+# module system resolves a plugin's browser half from its entry name.
+- insert:
+    - id: dsh-figma-ds
+      name: dsh-figma-ds

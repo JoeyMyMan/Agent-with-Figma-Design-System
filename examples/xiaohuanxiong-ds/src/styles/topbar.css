@@ -1,0 +1,17 @@
+/* 顶栏：只用锁定的 token（--xhx-*） */
+.xhx-topbar {
+  height: var(--xhx-height-topbar);
+  background: var(--xhx-surface-canvas);
+  border-bottom: 1px solid var(--xhx-color-divide);
+  border-radius: var(--xhx-radius-m);
+  box-shadow: var(--xhx-effect-shadow);
+}
+.xhx-topbar__tab {
+  font: var(--xhx-text-font-system-s-medium);
+  color: var(--xhx-text-secondary);
+  padding: 0 var(--xhx-16);
+}
+.xhx-topbar__tab[aria-selected='true'] {
+  color: var(--xhx-text-primary);
+  background: var(--xhx-action-hover-fill);
+}

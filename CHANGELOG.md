@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+**DeepSeek Harness plugin** (`integrations/dsh-figma-ds`)
+- The workflow as a page in the Harness Web UI: sidebar 「设计系统」 entry plus a main panel with 概览 / 门禁 / Token / 组件 / 评审 / 手册 / 命令 tabs. It reads the same repository state the CLI writes, runs `check` / `build` / `registry` / `review` / `rules` / `init` / `source` / `sync` in-process, and shows structured output instead of terminal text.
+- Host half only, no new runtime dependency: `index.js` imports `lib/*.mjs` from this repository, `cordis.patch.yml` adds one Loader row, and the client half is a plain-JS bundle with no build step. Installed as a linked local bundle (`dsh plugin add <repo>/integrations/dsh-figma-ds`); restart Harness once so the Host half loads.
+- The page may only open directories inside an allowlist (registered Harness workspaces plus `DSW_PROJECT_DIR` / `DSW_PROJECT_DIRS`); commands are serialised per directory because the toolkit writes without a lock.
+- The Figma side stays an MCP operation; the 手册 tab shows the playbook for each step.
+- `node integrations/dsh-figma-ds/tests/smoke.mjs` (also run by CI) exercises the allowlist, the state reader, the nine commands and the playbook reader without Harness.
+
+**Worked example** (`examples/xiaohuanxiong-ds`)
+- A real project pinned to a Figma library: 268 variables / 10 paint / 29 text / 17 effect styles / 265 components exported through `use_figma`, a `DS-2026-11-15` lock, 410 generated `--xhx-*` tokens, a five-entry component registry and a review ledger; the gate reports one intentionally drifting component.
+- `integrations/dsh-figma-ds/docs/tutorial-xiaohuanxiong.md` walks the whole flow with screenshots of the plugin page.
+
 ## 0.2.0
 
 **Four kinds of design-system source** (`designSystem.source`, `ds-workflow source`)

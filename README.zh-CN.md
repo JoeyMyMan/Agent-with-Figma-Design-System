@@ -14,6 +14,24 @@ Figma 设计系统 ↔ 代码的团队标准流程。**不绑定 coding agent**�
 | **手册** `playbooks/` | 8 个任务手册（英文：接入、映射、提案、实现、写回 Figma、设计师评审回路、对齐 Ready for dev、升级）+ Figma 注意事项。每个是 `SKILL.md` 格式 |
 | **Figma 导出脚本** `figma/export-design-system.js` | 通过 Figma MCP 的 `use_figma` 运行，导出 variables、样式、组件（任何套餐都能用，能看到未发布的本地样式） |
 | **模板** `templates/` | AGENTS.md 规则段、配置、`design-system/` 骨架（含评审台账）、CI、交接文档段落 |
+| **Harness 插件** `integrations/dsh-figma-ds/` | 把同一套流程做成 DeepSeek Harness 的「设计系统」页面：概览 / 门禁 / Token / 组件 / 评审 / 手册 / 命令；Host 半边直接 import 本仓库 `lib/`，不额外打包 CLI |
+
+## DeepSeek Harness 插件
+
+`integrations/dsh-figma-ds/` 把流程做成 DeepSeek Harness 的页面（侧边栏「设计系统」）：
+
+```sh
+# 在仓库检出目录里安装（本地 link 的 bundle，不是 npm 包）
+dsh plugin --profile <profile> add "$(pwd)/integrations/dsh-figma-ds"
+# 重启一次 Harness 让 Host 半边加载，然后打开「设计系统」
+```
+
+![插件页面](integrations/dsh-figma-ds/docs/images/01-overview.png)
+
+- 页面只能打开白名单里的目录（已注册的 Harness workspace，加上 `DSW_PROJECT_DIR` / `DSW_PROJECT_DIRS`）；工具写盘无锁，所以同一目录的命令串行执行。
+- Figma 侧（导出、提案、写回、评审提醒）仍然是 MCP 操作；「手册」tab 会打开对应步骤的 playbook。
+- `examples/xiaohuanxiong-ds/` 是钉在真实库上的完整示例（268 变量 / 265 组件 / 410 token / 5 条登记 / 1 条待评审），走查教程见 [integrations/dsh-figma-ds/docs/tutorial-xiaohuanxiong.md](integrations/dsh-figma-ds/docs/tutorial-xiaohuanxiong.md)。
+- `node integrations/dsh-figma-ds/tests/smoke.mjs` 不启动 Harness 就能验证页面调用的函数；CI 在 Node 20 / 22 上跑。
 
 ## 设计系统从哪里来（`designSystem.source`）
 
